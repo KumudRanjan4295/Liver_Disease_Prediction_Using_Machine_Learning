@@ -1,81 +1,80 @@
-#Liver Disease Prediction Using Machine Learning
+# Liver Disease Prediction Using Machine Learning
 
-This repository contains the complete implementation of a machine learning project designed to predict liver disease using the Indian Liver Patient Dataset. The project uses both classification (SVM) and regression (Random Forest) models to analyze key liver biomarkers and aid in clinical decision-making.
+This project leverages machine learning to predict liver disease using clinical data from the **Indian Liver Patient Dataset**. It combines exploratory data analysis (EDA), classification, and regression modeling to extract meaningful healthcare insights.
 
-📊 Project Overview
-Liver disease is a critical global health concern, and early detection is essential. This project applies machine learning to assist in:
+## 📂 Dataset
 
-Classifying patients as having liver disease or not using a Support Vector Machine (SVM).
+- **Source**: [Kaggle - Indian Liver Patient Dataset](https://www.kaggle.com/datasets/uciml/indian-liver-patient-records)
+- **Records**: 583
+- **Features**: Age, Gender, Bilirubin levels, Liver enzymes (ALT, AST, ALP), Albumin, A/G ratio
+- **Target Variable**: Liver Disease (0 = No Disease, 1 = Disease)
 
-Predicting bilirubin levels using Random Forest Regression to estimate disease severity.
+## 🔍 Project Objectives
 
-📁 Dataset
-Source: Kaggle - Indian Liver Patient Dataset
+- Perform EDA to understand patterns in liver disease indicators
+- Compare healthy vs. diseased patient data statistically and visually
+- Build:
+  - **SVM** model for disease classification
+  - **Random Forest** model for bilirubin level prediction
 
-Size: 583 records
+## 🧪 Exploratory Data Analysis (EDA)
 
-Features:
+- Analyzed gender and age-wise distribution
+- Investigated enzyme and protein level variations
+- Identified strong correlations using heatmaps
+- Handled missing values and encoded categorical data
 
-Demographics: Age, Gender
+## 🧠 Machine Learning Models
 
-Biochemical indicators: Bilirubin (Total/Direct), Liver Enzymes (ALT, AST, ALP)
+### 1. Support Vector Machine (SVM)
+- **Task**: Binary Classification
+- **Accuracy**: 72%
+- **Recall (Disease)**: 88%
+- **Precision**: 75%
+- **F1-Score**: 0.81
+- **Top Features**: AST, Albumin, ALP
 
-Protein markers: Albumin, Albumin/Globulin ratio
+### 2. Random Forest Regressor
+- **Task**: Predicting Total Bilirubin
+- **R² Score**: 0.68
+- **MAE**: 1.92 mg/dL
+- **RMSE**: 2.89 mg/dL
 
-Target: Liver disease presence (binary)
+### 📊 Feature Importance (Top 5)
+| Feature         | SVM Weight | RF Importance |
+|-----------------|------------|---------------|
+| AST (SGOT)      | 0.22       | 0.23          |
+| Albumin         | 0.19       | 0.21          |
+| ALP             | 0.15       | 0.17          |
+| Age             | 0.11       | 0.09          |
+| Total Proteins  | 0.08       | 0.07          |
 
-🧪 EDA Highlights
-Males are 2.7× more likely to have liver disease than females
+## ⚙️ Tech Stack
 
-Peak disease incidence observed in the 45–60 age group
+- Python
+- Pandas, NumPy
+- Seaborn, Matplotlib
+- Scikit-learn
 
-Strong correlations between liver enzyme levels and disease status
+## 🧠 Key Insights
 
-🧠 Machine Learning Models
-1. Support Vector Machine (SVM)
-Purpose: Classification
+- Males are 2.7× more likely to develop liver disease
+- Peak disease incidence observed between ages 45–60
+- High bilirubin and low albumin levels strongly indicate disease
 
-Accuracy: 72%
+## 🚀 Future Scope
 
-Recall (Disease class): 88%
+- Integrate deep learning (CNNs) for image+biochemical analysis
+- Deploy models as EHR-integrated decision support tools
+- Incorporate federated learning for secure, cross-hospital collaboration
+- Apply fairness audits to detect and mitigate bias
 
-Top Features: AST, Albumin, ALP
+## 📄 Report
 
-2. Random Forest Regression
-Purpose: Predicting Total Bilirubin levels
+The full project report is included as `Liver_Disease_Prediction_Using_Machine_Learning_Report.pdf`.
 
-R² Score: 0.68
+## 👤 Author
 
-MAE: 1.92 mg/dL
-
-🔍 Feature Importance (Top 5)
-
-Feature	SVM Weight	RF Importance
-AST (SGOT)	0.22	0.23
-Albumin	0.19	0.21
-ALP	0.15	0.17
-Age	0.11	0.09
-Total Proteins	0.08	0.07
-⚙️ Technical Stack
-Python
-
-Pandas, NumPy
-
-Matplotlib, Seaborn
-
-scikit-learn
-
-📈 Future Scope
-Model Improvement: Deep learning, hybrid models with imaging
-
-Deployment: EHR-integrated decision support systems
-
-Fairness & Ethics: Bias audits, federated learning for privacy
-
-📄 Report
-The full project report is included in the repository as a PDF, detailing methodology, results, and future recommendations.
-
-🧑‍🎓 Author
-Kumud Ranjan
-M.Tech Data Science and Engineering
+**Kumud Ranjan**  
+M.Tech Data Science and Engineering  
 Lovely Professional University
